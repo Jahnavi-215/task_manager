@@ -1,0 +1,496 @@
+/* ===== MODERN SAAS TABLE DESIGN ===== */
+
+.task-list-container {
+  background: #F9FAFB;
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 400px;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.empty-icon {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-description {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* ===== MODERN TABLE WRAPPER ===== */
+.modern-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== TABLE STRUCTURE ===== */
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ===== TABLE HEADER ===== */
+.modern-table thead {
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.modern-table thead tr {
+  height: 44px;
+}
+
+.modern-table thead th {
+  padding: 0;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.th-content {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== TABLE BODY ===== */
+.modern-table tbody tr {
+  height: 60px;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.modern-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.modern-table tbody tr:hover {
+  background: #F9FAFB;
+}
+
+.modern-table tbody tr.row-completed {
+  opacity: 0.6;
+}
+
+.modern-table tbody tr.row-completed:hover {
+  opacity: 0.8;
+}
+
+.modern-table tbody td {
+  padding: 0;
+  vertical-align: middle;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.td-content {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== COLUMN WIDTHS ===== */
+.col-checkbox {
+  width: 48px;
+}
+
+.col-task {
+  width: auto;
+  min-width: 250px;
+}
+
+.col-status {
+  width: 140px;
+}
+
+.col-priority {
+  width: 120px;
+}
+
+.col-category {
+  width: 140px;
+}
+
+.col-due {
+  width: 140px;
+}
+
+.col-actions {
+  width: 100px;
+}
+
+/* ===== CHECKBOX ===== */
+.modern-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid #D1D5DB;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  accent-color: #6C63FF;
+}
+
+.modern-checkbox:hover {
+  border-color: #6C63FF;
+}
+
+.status-checkbox {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.status-checkbox:hover {
+  transform: scale(1.1);
+}
+
+.status-checkbox:active {
+  transform: scale(0.95);
+}
+
+/* ===== TASK NAME ===== */
+.task-name-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.task-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1F2937;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.row-completed .task-name {
+  text-decoration: line-through;
+  color: #9CA3AF;
+}
+
+.task-description {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== STATUS BADGE ===== */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.status-pending {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.status-in-progress {
+  background: #E0E7FF;
+  color: #3730A3;
+}
+
+.status-completed {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+/* ===== PRIORITY PILL ===== */
+.priority-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 1px solid;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.priority-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== CATEGORY BADGE ===== */
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background: #F3F4F6;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.category-emoji {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.category-name {
+  line-height: 1;
+}
+
+/* ===== DUE DATE ===== */
+.due-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: #6B7280;
+  white-space: nowrap;
+}
+
+.due-overdue {
+  color: #DC2626;
+  font-weight: 500;
+}
+
+.overdue-icon {
+  flex-shrink: 0;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.action-buttons.visible {
+  opacity: 1;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: #6B7280;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.action-btn:hover {
+  background: #F3F4F6;
+  color: #374151;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.action-edit:hover {
+  background: #EEF2FF;
+  color: #6C63FF;
+}
+
+.action-delete:hover {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .col-category {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modern-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .modern-table {
+    min-width: 800px;
+  }
+  
+  .task-list-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-status,
+  .col-priority {
+    display: none;
+  }
+  
+  .col-task {
+    min-width: 200px;
+  }
+  
+  .action-buttons {
+    opacity: 1;
+  }
+  
+  .modern-table tbody tr {
+    height: 56px;
+  }
+  
+  .th-content,
+  .td-content {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .task-list-container {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  
+  .modern-table-wrapper {
+    border-radius: 8px;
+  }
+  
+  .col-due {
+    display: none;
+  }
+  
+  .modern-table {
+    min-width: 500px;
+  }
+}
+
+/* ===== HOVER EFFECTS ===== */
+@media (hover: hover) {
+  .modern-table tbody tr:hover .action-buttons {
+    opacity: 1;
+  }
+}
+
+/* ===== FOCUS STATES ===== */
+.modern-checkbox:focus,
+.status-checkbox:focus,
+.action-btn:focus {
+  outline: 2px solid #6C63FF;
+  outline-offset: 2px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modern-table tbody tr {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modern-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.modern-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.modern-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.modern-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.modern-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+
+/* ===== SCROLLBAR STYLING ===== */
+.modern-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.modern-table-wrapper::-webkit-scrollbar-track {
+  background: #F3F4F6;
+  border-radius: 4px;
+}
+
+.modern-table-wrapper::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
+
+.modern-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .action-buttons,
+  .modern-checkbox,
+  .status-checkbox {
+    display: none;
+  }
+  
+  .modern-table-wrapper {
+    box-shadow: none;
+    border: 1px solid #E5E7EB;
+  }
+}

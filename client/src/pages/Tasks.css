@@ -1,0 +1,223 @@
+/* ===== TASKS PAGE - MODERN SAAS DESIGN ===== */
+
+.tasks-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.tasks-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ===== FILTERS SECTION ===== */
+.tasks-filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.filter-group:first-child {
+  flex: 2;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  font-size: 0.9375rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1F2937;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.form-control:hover {
+  border-color: #D1D5DB;
+  background: #F3F4F6;
+}
+
+.form-control:focus {
+  border-color: #6C63FF;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+
+.form-control::placeholder {
+  color: #9CA3AF;
+}
+
+select.form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* ===== LOADING STATE ===== */
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  font-size: 1rem;
+  color: #6B7280;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .tasks-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tasks-content {
+    padding: 1rem;
+  }
+  
+  .tasks-filters {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .filter-group:first-child {
+    flex: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .tasks-content {
+    padding: 0.75rem;
+  }
+  
+  .tasks-filters {
+    border-radius: 8px;
+  }
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6C63FF 0%, #5A52D5 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.35);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: white;
+  color: #6B7280;
+  border: 1px solid #E5E7EB;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #F9FAFB;
+  border-color: #D1D5DB;
+  color: #374151;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #6B7280;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: #F3F4F6;
+  color: #374151;
+}
+
+/* ===== FOCUS STATES ===== */
+.btn:focus-visible,
+.form-control:focus-visible {
+  outline: 2px solid #6C63FF;
+  outline-offset: 2px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tasks-filters,
+.task-list-container {
+  animation: slideIn 0.3s ease-out;
+}
+
+.tasks-filters {
+  animation-delay: 0.1s;
+}
+
+.task-list-container {
+  animation-delay: 0.2s;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
